@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/nine-wp-one-nyt")
 public class NineWpOneNyt extends HttpServlet {
-	private static final long serialVersionUID = 1L;
 	private static long field = 1;
 	
 	public boolean isMultipleOfTen(long num) {
@@ -22,7 +21,9 @@ public class NineWpOneNyt extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
 		if(isMultipleOfTen(field)) {
 			response.sendRedirect("http://www.nytimes.com");
 		} else {

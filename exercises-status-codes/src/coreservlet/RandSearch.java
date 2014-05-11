@@ -12,12 +12,11 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/rand-search")
 public class RandSearch extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		double num = Math.random();
 		if(num < 0.5d) {
 			response.sendRedirect("http://www.google.com");

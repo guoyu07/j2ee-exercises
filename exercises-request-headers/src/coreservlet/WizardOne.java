@@ -14,13 +14,14 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/wizard-one")
 public class WizardOne extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-	
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
 		String href = ServletUtil.getWizardPage(request, "two");
+		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		out.println("<!DOCTYPE html>"
 				+ "<html>"

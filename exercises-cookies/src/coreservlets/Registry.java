@@ -1,4 +1,4 @@
-package coreservlet;
+package coreservlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,34 +10,36 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class SwitchColor
+ * Servlet implementation class Registry
  */
-@WebServlet("/switch-color")
-public class SwitchColor extends HttpServlet {
+@WebServlet("/registry")
+public class Registry extends HttpServlet {
+
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		String firstName = ServletUtil.getParam("firstName", request, response);
+		String lastName = ServletUtil.getParam("lastName", request, response);
+		String emailAddress = ServletUtil.getParam("emailAddress", request, response);
 		
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		String body = "";
-		if(ServletUtil.isChrome(request)) {
-			body = "<body bgcolor=\"red\" text=\"yellow\">"
-					+ "<h1>Hello, Chrome user!</h1>"
-					+ "</body>";
-		} else {
-			body = "<body bgcolor=\"yellow\" text=\"red\">"
-					+ "<h1>Hello, non-Chrome user!</h1>"
-					+ "</body>";
-		}
-		out.println("<!DOCTYPE html>"
+		out.println("<!DOCTYPE>"
 				+ "<html>"
 				+ "<head>"
-				+ "<title>Switch color</title>"
+				+ "<title>Registry</title>"
 				+ "</head>"
-				+ body
+				+ "<body>"
+				+ "<h1>Registry</h1>"
+				+ "<ul>"
+				+ "<li>First name: " + firstName + "</li>"
+				+ "<li>Last name: " + lastName + "</li>"
+				+ "<li>Email address: " + emailAddress + "</li>"
+				+ "</ul>"
+				+ "</body>"
 				+ "</html>");
+
 	}
 }

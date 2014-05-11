@@ -1,43 +1,41 @@
-package coreservlet;
+package coreservlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class SwitchColor
+ * Servlet implementation class Wizard1
  */
-@WebServlet("/switch-color")
-public class SwitchColor extends HttpServlet {
+@WebServlet("/wizard-one")
+public class WizardOne extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		response.setContentType("text/html");
+	    response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		String body = "";
-		if(ServletUtil.isChrome(request)) {
-			body = "<body bgcolor=\"red\" text=\"yellow\">"
-					+ "<h1>Hello, Chrome user!</h1>"
-					+ "</body>";
-		} else {
-			body = "<body bgcolor=\"yellow\" text=\"red\">"
-					+ "<h1>Hello, non-Chrome user!</h1>"
-					+ "</body>";
-		}
 		out.println("<!DOCTYPE html>"
 				+ "<html>"
 				+ "<head>"
-				+ "<title>Switch color</title>"
+				+ "<title>Wizard 1</title>"
 				+ "</head>"
-				+ body
+				+ "<body>"
+				+ "<h1>Welcome on 1st wizard page</h1>"
+				+ "<a href=\"/exercises-cookies/wizard-two\">Go to 2nd wizard page</a>"
+				+ "</body>"
 				+ "</html>");
+		
+		Cookie cookie = new Cookie("WIZARD_ONE", "visited");
+		cookie.setMaxAge(60*60*24*365);
+		response.addCookie(cookie);
 	}
 }

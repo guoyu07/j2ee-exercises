@@ -14,14 +14,14 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/favor-java")
 public class FavorJava extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		String favoriteLanguage = request.getParameter("favoriteLanguage");
 		if(favoriteLanguage != null && favoriteLanguage.equalsIgnoreCase("Java")) {
+			response.setContentType("text/html");
 			PrintWriter out = response.getWriter();
 			out.println("<!DOCTYPE html>"
 					+ "<html>"
