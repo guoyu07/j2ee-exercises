@@ -1,4 +1,4 @@
-package coreservlets;
+package servletCookies;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;

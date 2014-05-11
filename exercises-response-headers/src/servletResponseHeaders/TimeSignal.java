@@ -1,6 +1,9 @@
-package coreservlet;
+package servletResponseHeaders;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Date;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,20 +11,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class RandSearch
+ * Servlet implementation class TimeSignal
  */
-@WebServlet("/rand-search")
-public class RandSearch extends HttpServlet {
+@WebServlet("/time-signal")
+public class TimeSignal extends HttpServlet {
+
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		double num = Math.random();
-		if(num < 0.5d) {
-			response.sendRedirect("http://www.google.com");
-		} else {
-			response.sendRedirect("http://www.bing.com");
-		}
+	      response.setIntHeader("Refresh", 5);
+	      PrintWriter out = response.getWriter();
+	      out.println(new Date());
 	}
+
 }

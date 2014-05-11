@@ -1,4 +1,4 @@
-package coreservlets;
+package servletCookies;
 
 import java.io.IOException;
 import java.io.PrintWriter;

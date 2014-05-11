@@ -1,4 +1,4 @@
-package coreservlets;
+package servletStatusCodes;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

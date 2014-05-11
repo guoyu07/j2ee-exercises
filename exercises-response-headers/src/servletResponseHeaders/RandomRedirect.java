@@ -1,4 +1,4 @@
-package coreservlet;
+package servletResponseHeaders;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,27 +8,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class NineWpOneNyt
+ * Servlet implementation class RandomRedirect
  */
-@WebServlet("/nine-wp-one-nyt")
-public class NineWpOneNyt extends HttpServlet {
-	private static long field = 1;
-	
-	public boolean isMultipleOfTen(long num) {
-		return (num % 10) == 0;
-	}
+@WebServlet("/random-redirect")
+public class RandomRedirect extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		if(isMultipleOfTen(field)) {
-			response.sendRedirect("http://www.nytimes.com");
+		String location;
+		if(Math.random() < 0.5) {
+			location = "http://www.google.com";
 		} else {
-			response.sendRedirect("http://www.washingtonpost.com");
+			location = "http://www.bing.com";
 		}
-		field++;
+		response.setStatus(HttpServletResponse.SC_FOUND);
+		response.setHeader("Location", location);
 	}
+
 }

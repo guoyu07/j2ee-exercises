@@ -1,4 +1,4 @@
-package coreservlet;
+package servletRequestHeaders;
 
 import java.io.IOException;
 import java.io.PrintWriter;

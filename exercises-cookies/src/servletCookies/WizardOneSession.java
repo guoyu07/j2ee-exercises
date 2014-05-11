@@ -1,4 +1,4 @@
-package coreservlets;
+package servletCookies;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class Wizard1
  */
-@WebServlet("/wizard-one")
-public class WizardOne extends HttpServlet {
+@WebServlet("/wizard-one-session")
+public class WizardOneSession extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -35,7 +35,6 @@ public class WizardOne extends HttpServlet {
 				+ "</html>");
 		
 		Cookie cookie = new Cookie("WIZARD_ONE", "visited");
-		cookie.setMaxAge(60*60*24*365);
 		response.addCookie(cookie);
 	}
 }

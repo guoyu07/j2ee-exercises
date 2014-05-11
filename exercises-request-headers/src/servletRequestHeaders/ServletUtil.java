@@ -1,4 +1,4 @@
-package coreservlet;
+package servletRequestHeaders;
 
 import javax.servlet.http.HttpServletRequest;
 
