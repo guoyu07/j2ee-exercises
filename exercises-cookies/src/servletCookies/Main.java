@@ -38,7 +38,7 @@ public class Main extends HttpServlet {
 
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		out.println("<!DOCTYPE>"
+		out.println("<!DOCTYPE html>"
 				+ "<html>"
 				+ "<head>"
 				+ "<title>Main page</title>"

@@ -40,7 +40,7 @@ public class Tracker extends HttpServlet {
 		    session.setAttribute("tracks", tracks);
 		    
 			StringBuilder builder = new StringBuilder();
-			builder.append("<!DOCTYPE>")
+			builder.append("<!DOCTYPE html>")
 			.append("<html>")
 			.append("<head>")
 			.append("<title>Tracker</title>")

@@ -46,7 +46,7 @@ public class Cart extends HttpServlet {
 			session.setAttribute("items", items);
 			
 			StringBuilder builder = new StringBuilder();
-			builder.append("<!DOCTYPE>")
+			builder.append("<!DOCTYPE html>")
 			.append("<html>")
 			.append("<head>")
 			.append("<title>Cart</title>")

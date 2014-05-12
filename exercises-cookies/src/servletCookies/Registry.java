@@ -26,7 +26,7 @@ public class Registry extends HttpServlet {
 		
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		out.println("<!DOCTYPE>"
+		out.println("<!DOCTYPE html>"
 				+ "<html>"
 				+ "<head>"
 				+ "<title>Registry</title>"
