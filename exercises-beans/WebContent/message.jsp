@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 <title>Message</title>
 </head>
-<jsp:useBean id="colorPreference" class="servletBeans.ColorBean" scope="application"></jsp:useBean>
+<jsp:useBean id="colorPreference" class="domainBeans.ColorBean" scope="application"></jsp:useBean>
 <jsp:setProperty property="*" name="colorPreference"/>
 <body bgcolor="<jsp:getProperty property="backgroundColor" name="colorPreference"/>" text='<jsp:getProperty property="foregroundColor" name="colorPreference"/>'>
 <h1>Message</h1>

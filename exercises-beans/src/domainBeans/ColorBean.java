@@ -1,4 +1,4 @@
-package servletBeans;
+package domainBeans;
 
 import java.io.Serializable;
 
