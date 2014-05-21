@@ -6,8 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 <title>Page 2</title>
 </head>
-<%@ include file="/WEB-INF/includes/get-color.jsp" %>
-<body bgcolor="<%= bgColor %>">
+<body bgcolor="<jsp:include page="/WEB-INF/includes/get-color.jsp"/>">
 <h1>Page 2</h1>
 <a href="page1.jsp">Go to Page1</a>
 <jsp:include page="/WEB-INF/includes/signature.jsp"></jsp:include>

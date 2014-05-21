@@ -4,3 +4,4 @@ if(bgColor == null || bgColor.trim().isEmpty()) {
 	bgColor = "WHITE";
 }
 %>
+<%= bgColor %>
