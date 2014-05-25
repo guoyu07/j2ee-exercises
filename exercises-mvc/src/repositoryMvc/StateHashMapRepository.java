@@ -5,10 +5,10 @@ import java.util.Map;
 
 import domainMvc.StatePair;
 
-public class StateMapRepository implements StateRepository {
+public class StateHashMapRepository implements StateRepository {
 	private Map<String,StatePair> statePairs;
 	
-	public StateMapRepository() {
+	public StateHashMapRepository() {
 		statePairs = new HashMap<>();
 		addStatePair(new StatePair("California", "CA"));
 		addStatePair(new StatePair("Maryland", "MD"));

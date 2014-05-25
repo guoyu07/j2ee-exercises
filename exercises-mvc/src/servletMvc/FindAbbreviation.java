@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import domainMvc.StatePair;
-import repositoryMvc.StateMapRepository;
+import repositoryMvc.StateHashMapRepository;
 import repositoryMvc.StateRepository;
 
 /**
@@ -27,7 +27,7 @@ public class FindAbbreviation extends HttpServlet {
 			throws ServletException, IOException {
 		
 		String stateName = request.getParameter("stateName");
-		StateRepository repository = new StateMapRepository();
+		StateRepository repository = new StateHashMapRepository();
 		StatePair statePair = repository.getStatePair(stateName);
 		
 
