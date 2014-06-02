@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE faces-config PUBLIC
+  "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.1//EN"
+  "http://java.sun.com/dtd/web-facesconfig_1_1.dtd">
+
+<faces-config>
+  <application>
+    <variable-resolver>
+      org.springframework.web.jsf.DelegatingVariableResolver
+    </variable-resolver>
+  </application>
+
+  <navigation-rule>
+    <from-view-id>/welcome.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>show-balance</from-outcome>
+      <to-view-id>/show-customer.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>missing-id</from-outcome>
+      <to-view-id>/missing-id.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>invalid-id</from-outcome>
+      <to-view-id>/invalid-id.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+  
+  <!--  I declare all of the beans in applicationContext.xml.
+        However, some people like to declare the top-level
+        backing bean in faces-config.xml, since doing so
+        is more familiar to JSF developers. So, I have this option
+        commented out below.  
+  <managed-bean>
+    <managed-bean-name>formBean</managed-bean-name>
+    <managed-bean-class>
+      coreservlets.CustomerBackingBean
+    </managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+    <managed-property>
+      <property-name>lookupService</property-name>
+      <value>#{sampleLookupService}</value>
+    </managed-property>
+    <managed-property>
+      <property-name>colorPreferences</property-name>
+      <value>#{colorPreferences}</value>
+    </managed-property>
+  </managed-bean>
+  -->
+</faces-config>

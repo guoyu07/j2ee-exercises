@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf12303888198970" configfile="/spring-jsf-app/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="welcome" x="12" id="pf123041756027610" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf123041756027611 pf123041940477812 pf123041940477813" path="/welcome.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="show-customer" x="156" y="156" id="pf12304175602689" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf123041756027611" path="/show-customer.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="missing-id" x="165" y="72" id="pf123041940477814" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf123041940477812" path="/missing-id.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="invalid-id" x="168" id="pf123041940477815" referenceLink="//@navigationRule.0/@navigationCase.2/@toViewId|" inlinks="pf123041940477813" path="/invalid-id.jsp"/>
+  <links id="pf123041756027611" target="pf12304175602689" source="pf123041756027610" outcome="show-balance"/>
+  <links id="pf123041940477812" target="pf123041940477814" source="pf123041756027610" outcome="missing-id"/>
+  <links id="pf123041940477813" target="pf123041940477815" source="pf123041756027610" outcome="invalid-id"/>
+</pageflow:Pageflow>

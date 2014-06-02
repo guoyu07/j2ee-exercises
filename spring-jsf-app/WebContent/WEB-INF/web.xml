@@ -1,0 +1,41 @@
+<?xml version="1.0"?>    
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+         version="2.4">
+     
+  <!-- Start the Spring listener that loads the application context
+       when the Web app starts up. It assumes the context is named
+       WEB-INF/applicationContext.xml unless you set a context param
+       called contextConfigLocation to override it. -->
+  <listener>
+    <listener-class>
+      org.springframework.web.context.ContextLoaderListener
+    </listener-class>
+  </listener>
+  <!-- Lets the bean definition file specify scopes of request 
+       and session. -->
+  <listener>
+    <listener-class>
+      org.springframework.web.context.request.RequestContextListener
+    </listener-class>
+  </listener>
+  
+  <!-- Faces Servlet -->
+  <servlet>
+     <servlet-name>Faces Servlet</servlet-name>
+     <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+     <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+     <servlet-name>Faces Servlet</servlet-name>
+     <url-pattern>*.faces</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Welcome files -->
+  <welcome-file-list>
+     <welcome-file>index.jsp</welcome-file>
+     <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+
+</web-app>
